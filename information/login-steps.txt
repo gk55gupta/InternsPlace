@@ -1,0 +1,22 @@
+
+steps we need to follow for login page...
+
+1.  Build login HTML form
+2.  check if form has been submitted
+3.  validate form data
+4.  add form data to variables
+5.  connect to database
+6.  query the database username submitted in the form 
+ 6.1  if no entry : show error message with register now link
+
+7.  store basic user data from database in variables
+8.  verify stored hashed password with the one submitted in         the form
+ 8.1  if invalid show error message
+
+9.  start a session and create session variables
+10. redirect to a profile page
+  10.1  provide link to logout page
+  10.2  add cookie clear to logout page
+  10.3  provide link to log back include
+
+11.  close the mysql connection

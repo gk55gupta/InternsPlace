@@ -1,0 +1,127 @@
+
+.btn{
+    border-radius: 0px;
+    padding:8px 22px;
+}
+
+#logout-btn{
+    color:white;
+}
+
+#logout-btn:hover{
+    background-color: #bf0600;
+}
+.bg-blue{
+    background-color: #1295c9;
+    color: white;    
+}
+.form-control{
+    margin: 10px auto;
+    border-radius: 0px;
+}
+
+.padding-10{
+    padding: 10px;
+}
+
+#navbar-index{
+	background-color: #fff;
+    border:0;
+}
+
+.navbar-nav > li > a{
+    padding: 8px 28px;
+}
+
+
+p.navbar-text{
+	text-align: center;
+    margin: 0px;
+    padding:8px;
+    border:1px solid #777;
+}
+p.navbar-text > a{
+	text-decoration: none;
+	padding: 10px;
+	font-weight: bold;
+}
+
+.navbar-brand > #logo {
+    width: 170px; 
+}
+
+.navbar-brand {
+    height: 90px;
+}
+
+.form-container{
+    max-width:450px;
+}
+
+
+
+.glyphicon{
+    margin-right: 6px
+}
+button.navbar-toggle{
+    color: #111;
+    margin-top: 30px;
+}
+
+@media screen and (min-width : 529px){
+    form.search > div.input-group{
+        width:500px;
+        margin: 0 auto;
+    }
+}
+
+form.search  #internship-search-text{
+    margin-top: 0;
+}
+
+form.search button.btn{
+    padding:6px 28px; 
+}
+
+div.jumbotron  h3 {
+    margin: 15px;
+}
+
+div.jumbotron  h4 {
+    margin-bottom: 80px;
+}
+
+.login-padding{
+    padding: 105px 400px;
+}
+
+#login-btn{
+    margin: 20px 20px 20px 0px;
+    color: white;
+}
+#signup-btn{
+    margin-top: 20px;
+}
+
+
+/*Footer Style*/
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body { 
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #666;
+}
+.footer  > div {
+    color: white;
+}
