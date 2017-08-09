@@ -8,8 +8,8 @@
     <h2>Post Internship</h2>
     <form action="" method="post" class="row">
         <div class="form-group col-sm-6">
-            <label for="Internship-title">Internship-title</label>
-            <input type="text" class="form-control input-lg" id="internshipTitle" name="title" placeholder="Enter Title of Internship" value="" required>
+            <label for="Internship-position">Internship-position</label>
+            <input type="text" class="form-control input-lg" id="internshipposition" name="position" placeholder="Enter position of Internship" value="" required>
         </div>
         
         <div class="form-group col-sm-6">
@@ -17,14 +17,7 @@
             </label>
             <input type="text" class="form-control input-lg" id="skills" name="skills" placeholder="Required Skills" value="" required>
         </div>
-        
-        <div class="form-group col-md-6">
-            <label for="internship-type">Select Internship-Type</label>
-            <select class="form-control input-lg" name="type">
-                <option>Full-time</option>
-                <option>Part-time</option>
-            </select>
-        </div>    
+            
         
         <div class="form-group col-sm-6">
             <label for="Internship-location">Location
@@ -33,8 +26,8 @@
         </div>
 
         <div class="form-group col-sm-6">
-            <label for="internship-description">Description</label>
-            <textarea class="form-control input-lg" rows="" id="" name="description" placeholder="Enter some description" required></textarea>
+            <label for="internship-description">Duration</label>
+            <input type="text" class="form-control input-lg" id="" name="duration" placeholder="Enter Duration of Internship" value="" required>
         </div>
             
             <div class="col-sm-12">
@@ -54,16 +47,16 @@
     //if submit button clicked
     if( isset( $_POST[ 'post_internship' ] ) ) 
     {    
-        $title          = $_POST['title'];
-        $skills         = $_POST['skills'];
-        $type           = $_POST['type'];    
+        $position       = $_POST['position'];
+        $skills         = $_POST['skills'];   
         $location       = $_POST['location'];
-        $description    = $_POST['description'];
+        $duration       = $_POST['duration'];
+        $employer_id    = $_SESSION['loggedInUser'];
         //var_dump($type);
-        $query1 = "insert into internship (internship_title, skills, type, location, description) values ('$title','$skills','$type', '$location', '$description')";
+        $query1 = "insert into internship (position, skills, location, duration, employer_id) values ('$position','$skills','$location', '$duration', '$employer_id')";
     
         if( mysqli_query( $conn, $query1 ) ){           
-            echo '<div class="alert alert-success">Intenship Added<a class="close" data-dismiss="alert">&times;</a></div>';
+            echo '<br><div class="container alert alert-success">Intenship Added<a class="close" data-dismiss="alert">&times;</a></div>';
         }
         else
             echo "Error In Insertion: <br>".$query1."<br>".mysqli_error($conn);

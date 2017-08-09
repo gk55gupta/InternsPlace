@@ -16,9 +16,6 @@
         <div class="internship-header">
             <a id="internship-title" name="title" href="#">
                 <?php  echo $row['position'];  ?>
-                <p class="sub-title" name="type">
-                    <?php  echo $row['type']; ?>
-                </p>
             </a>
         </div>
         <div class="row text-center">
@@ -28,7 +25,7 @@
                     <?php  echo $row['location']; ?>
                 </p>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-5">
                 <p class="text-blue">Skills</p>
                 <p class="sub-title text-grey">
                     <?php  echo $row['skills']; ?>
@@ -40,13 +37,8 @@
                     <?php  echo $row['duration']; ?>
                 </p>
             </div>
+            
             <div class="col-sm-3">
-                <p class="text-blue">Description</p>
-                <p class="sub-title text-grey">
-                    <?php  echo $row['description']; ?>
-                </p>
-            </div>
-            <div class="col-sm-2">
                 <?php  $_SESSION['internship_id'] = $row['id'];  ?>
                 <form method="post">
                     <button type="submit" class="btn btn-primary" name="apply-internship">Apply</button>
@@ -70,13 +62,12 @@
         $result = mysqli_query( $conn, $query );
         if(mysqli_num_rows($result) > 0){
             $row = mysqli_fetch_assoc($result);
-            $applied_student_email = $_SESSION['email_id'];
+            $applied_student_email = $_SESSION['loggedInUser'];
             $position = $row['position'];
-            $company = $row['company'];
-            $query1 = "insert into internship_application (position, applied_student_id, company, status) values ('$position','$applied_student_email' ,'$company', 'Applied')";
+            $query1 = "insert into internship_application (position, applied_student_id, status) values ('$position','$applied_student_email' , 'Applied')";
             
             if( mysqli_query( $conn, $query1 ) ){           
-               echo '<div class="alert alert-success">Intenship Applied<a class="close" data-dismiss="alert">&times;</a></div>';
+               echo '<div class="container alert alert-success">Intenship Applied<a class="close" data-dismiss="alert">&times;</a></div>';
             }
             else
                echo "Error In Insertion: <br>".$query1."<br>".mysqli_error($conn);

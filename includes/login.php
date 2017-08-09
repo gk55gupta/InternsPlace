@@ -63,7 +63,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Internshala - Internships that matters</title>
+    <title>InternsPlace - From Student to Employee</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -73,21 +73,21 @@
   </head>
   <body>
     <div class="container">
-        <a class="navbar-brand" href="../index.php"><img id="logo" src="../images/internshala_logo.png"></a>
+        <a href="../index.php"><img class="logo" src="../images/logo.png"></a>
      </div><br>
 <!-----------  Login/Sign Up   ---------->
-      <h3 class="text-center text-blue">Login to Internshala</h3>
+      <h3 class="text-center text-blue">Login to InternsPlace</h3><br>
           <div class="container form-container">
               <? echo $loginError; ?>
               <form class="form" method="post">
-                <label><span class="glyphicon glyphicon-user"></span>Email ID</label>
-                <input id="login-id" class="form-control" type="text" name="username" placeholder="Enter Email ID" value="<?php if( $record_count > 0 ) echo $email_id; ?>" required>
-                <label><span class="glyphicon glyphicon-eye-open"></span>Password</label>
-                <input id="password" class="form-control" type="password" name="password" placeholder="Enter your password" required><br>
-                <a class="pull-right" href="#">Forgot Password?</a><br>
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary  login" name="login">Login</button>  
-                </div>
+                  <label><span class="glyphicon glyphicon-user"></span>Email ID</label>
+                  <input id="login-id" class="form-control" type="text" name="username" placeholder="Enter Email ID" value="<?php if( $record_count > 0 ) echo $email_id; ?>" required>
+                  <label><span class="glyphicon glyphicon-eye-open"></span>Password</label>
+                  <input id="password" class="form-control" type="password" name="password" placeholder="Enter your password" required><br>
+                  <a class="pull-right" href="#">Forgot Password?</a><br>
+                  <div class="text-center">
+                      <button type="submit" class="btn btn-primary  login" name="login">Login</button>  
+                  </div>
               </form>
           </div>
 <?php include('footer.php') ?>    

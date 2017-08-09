@@ -13,8 +13,13 @@
     <link href="../css/style.css" rel="stylesheet">
   </head>
   <body>
-    <div class="container">  
-        <a class="navbar-brand" href="../index.php"><img id="logo" src="../images/internshala_logo.png"></a>    
+    <div class="container row">  
+        <div class="col-sm-9">
+                <a href="../index.php"><img class="logo" src="../images/logo.png"></a>
+        </div>
+        <div class="col-sm-3">
+            <p class="text-center">Registered User? <a id="login" class="btn btn-primary" href="login.php">Login</a></p>
+        </div>
     </div>
 <!---------------  Sign Up Student form   ---------------->
     <div class="container form-container" id="student-signup">
@@ -32,10 +37,7 @@
                 <input id="password" class="form-control" type="password" name="password" placeholder="Enter your password" required>
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary  login" name="signup">Sign Up</button>
-                </div>
-                <div class="modal-footer">
-                      <p class="text-center">Registered User? <a href="login.php">Login Here!</a></p>
-                </div>  
+                </div> 
               </form>
       </div>
 

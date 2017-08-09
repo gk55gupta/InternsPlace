@@ -16,10 +16,8 @@
               <tr class="">
                   <th>Title</th>
                   <th>Skills</th>
-                  <th>Internship Type</th>
                   <th>Location</th>
                   <th>Duration</th>
-                  <th>Description</th>
               </tr>
               <?php
                 include( 'connection.php' );
@@ -33,9 +31,8 @@
                         while( $row = mysqli_fetch_assoc( $result ) ){
                             echo "<tr>";
                             
-                            echo "<td>" . $row['position'] . "</td><td>" . $row['skills'] . "</td>
-                            <td>" . $row['type'] . "</td><td>" . $row['location'] . "</td>
-                            <td>" . $row['duration'] . "</td><td>". $row['description'] . "</td>";
+                            echo "<td>" . $row['position'] . "</td><td>" . $row['skills'] . "</td><td>" . $row['location'] . "</td>
+                            <td>" . $row['duration'] . "</td>";
                             
                             echo "</tr>";       
                         }

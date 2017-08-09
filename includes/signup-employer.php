@@ -35,7 +35,9 @@
   </head>
   <body>
     <div class="container">  
-        <a class="navbar-brand" href="../index.php"><img id="logo" src="../images/internshala_logo.png"></a>    
+        <div class="col-sm-9">
+            <a href="../index.php"><img class="logo" src="../images/logo.png"></a>
+        </div>    
       </div>    
 <!---------------  Sign Up Student form   ---------------->
       <?php  echo $alert;   ?>

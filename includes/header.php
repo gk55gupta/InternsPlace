@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title><?php $title="";   echo $title; ?></title>
+    <title><?php $title="InternsPlace - From Student To Employee";   echo $title; ?></title>
       
     <!-- Bootstrap core CSS -->
     <link href="../bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,9 +26,7 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="../index.php">
-                      <img id="logo" alt="Brand" src="../images/internshala_logo.png">
-                  </a>
+                  <a href="../"><img class="logo" src="../images/logo.png"></a>
               </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,13 +40,12 @@
                         $user_id = $_SESSION['loggedInUser'];  
               ?>
               <p class="navbar-text"> 
-                <a href="user-profile.php">
                   <span class="glyphicon glyphicon-user"></span>
                   <?php  echo $user_id;   ?>
-                </a>
+                
               </p>
               <li>
-                  <a id="logout-btn"  type="button" class="btn btn-danger" href="logout.php">Logout</a>
+                  <a id="logout-btn" type="button" class="btn btn-danger" href="logout.php">Logout</a>
               </li> 
               <?php     
                     }

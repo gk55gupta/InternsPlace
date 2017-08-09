@@ -1,20 +1,50 @@
-
+.dropdown{
+    display: inline-block;
+}
 .btn{
-    border-radius: 0px;
-    padding:8px 22px;
+    padding: 8px 25px;
+    border-radius: 0;
+}
+
+#login, #signup{
+    margin: 25px 0px;
 }
 
 #logout-btn{
-    color:white;
+    color: white;
+}
+
+.bg-orange{
+    background: #f68d20;
+    color: white;
+}
+.bg-blue{
+    background-color: #00a9de;
+    color: white;    
+}
+
+.hero-img{
+    width:100%;
+    margin-bottom: 25px;
+}
+
+.main-img{
+    width: 100%;
+}
+.col-sm-4.btn-grp{
+  text-align: center;
+    margin: 300px 0px;
+}
+.logo{
+  margin:10px;
+  width: 150px;
 }
 
 #logout-btn:hover{
     background-color: #bf0600;
 }
-.bg-blue{
-    background-color: #1295c9;
-    color: white;    
-}
+
+
 .form-control{
     margin: 10px auto;
     border-radius: 0px;
@@ -24,56 +54,14 @@
     padding: 10px;
 }
 
-#navbar-index{
-	background-color: #fff;
-    border:0;
-}
-
-.navbar-nav > li > a{
-    padding: 8px 28px;
-}
-
-
-p.navbar-text{
-	text-align: center;
-    margin: 0px;
-    padding:8px;
-    border:1px solid #777;
-}
-p.navbar-text > a{
-	text-decoration: none;
-	padding: 10px;
-	font-weight: bold;
-}
-
-.navbar-brand > #logo {
-    width: 170px; 
-}
-
-.navbar-brand {
-    height: 90px;
-}
-
 .form-container{
     max-width:450px;
 }
 
-
-
 .glyphicon{
     margin-right: 6px
 }
-button.navbar-toggle{
-    color: #111;
-    margin-top: 30px;
-}
 
-@media screen and (min-width : 529px){
-    form.search > div.input-group{
-        width:500px;
-        margin: 0 auto;
-    }
-}
 
 form.search  #internship-search-text{
     margin-top: 0;
@@ -95,14 +83,6 @@ div.jumbotron  h4 {
     padding: 105px 400px;
 }
 
-#login-btn{
-    margin: 20px 20px 20px 0px;
-    color: white;
-}
-#signup-btn{
-    margin-top: 20px;
-}
-
 
 /*Footer Style*/
 
@@ -119,9 +99,19 @@ body {
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #666;
+  height: 65px;
 }
 .footer  > div {
     color: white;
+}
+
+
+@media screen and (max-width : 767px){
+    .logo{
+        width: 100px;
+    }
+    #header{
+        text-align: center;
+    }
+    
 }
