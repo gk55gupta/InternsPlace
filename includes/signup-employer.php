@@ -1,4 +1,14 @@
 <?php
+
+    if(!isset($_SESSION)){
+        session_start();
+    }
+
+    if(isset($_SESSION['loggedInUser'])){
+        header('location:../index.php');
+    }
+
+    
     $alert = "";
     include('connection.php');
     if(isset($_POST['signup'])){
@@ -16,7 +26,11 @@
       }
     } 
     mysqli_close($conn);
+   
 ?>
+
+
+
 
 
 <!DOCTYPE html>
@@ -24,49 +38,48 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>Sign Up - Employer</title>
-      
-    <!-- Bootstrap core CSS -->
-    <link href="../bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <title>InternsPlace</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.min.css">  
+      
     <!-- Custom styles for this Website -->
     <link href="../css/style.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="container">  
-        <div class="col-sm-9">
-            <a href="../index.php"><img class="logo" src="../images/logo.png"></a>
-        </div>    
-      </div>    
+    
+      
+</head>
+
+<body>
+    
+    <div class="text-center">    
+        <a href="../index.php">
+            <img class="logo" src="../images/logo.png">
+        </a>
+    </div>
+    
 <!---------------  Sign Up Student form   ---------------->
       <?php  echo $alert;   ?>
       <div class="container form-container">
           
           <h2 class="text-center">Sign Up - Employer</h2><hr>
-              <form id="" method="post">
-                  <label>Name</label>
-                  <input id="name" class="form-control" type="text" name="name" placeholder="Enter your Name" required>
-                  <label>Email ID</label>
-                  <input id="email-id" class="form-control" type="email" name="email" placeholder="Enter Email ID" required>
-                  <label>Organization Name</label>
-                  <input id="login-id" class="form-control" type="text" name="org" placeholder="Name of Organization" required>
-                  <label>Password</label>
-                  <input id="password" class="form-control" type="password" name="password" placeholder="Enter your password" required>
-                  <div class="text-center">
-                      <button type="submit" class="btn btn-primary  login" name="signup" style="margin: 20px 0px 20px 0px;">Sign Up</button>
-                  </div>
-                  <div class="modal-footer">
-                      <p class="text-center">Registered User? 
+          <form id="" method="post">
+              <label>Name</label>
+              <input id="name" class="form-control" type="text" name="name" placeholder="Enter your Name" required>
+              <label>Email ID</label>
+              <input id="email-id" class="form-control" type="email" name="email" placeholder="Enter Email ID" required>
+              <label>Organization Name</label>
+              <input id="login-id" class="form-control" type="text" name="org" placeholder="Name of Organization" required>
+              <label>Password</label>
+              <input id="password" class="form-control" type="password" name="password" placeholder="Enter your password" required>
+              <div class="text-center">
+                  <button type="submit" class="btn btn-primary  login" name="signup" style="margin: 20px 0px 20px 0px;">Sign Up</button>
+              </div>
+              <div class="modal-footer">
+                  <p class="text-center">Registered User? 
                           <a href="login.php">Login Here!</a>
-                      </p>
-                  </div>  
-              </form>
+                  </p>
+              </div>  
+          </form>
       </div>
-        <footer class="footer">
-          <div class="container padding-10">
-            <p>&copy; 2017 - Internshala.com</p>
-          </div>
-        </footer>
-    </body>    
-</html>
+    <?php require('footer.php'); ?>

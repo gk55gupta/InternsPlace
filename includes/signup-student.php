@@ -1,26 +1,39 @@
+<?php  
+    
+    if(!isset($_SESSION)){
+        session_start();
+    }
+    if(isset($_SESSION['loggedInUser'])){
+        header('location:../index.php');
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>Sign Up - Student</title>
-      
-    <!-- Bootstrap core CSS -->
-    <link href="../bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <title>InternsPlace</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.min.css">  
+      
     <!-- Custom styles for this Website -->
     <link href="../css/style.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="container row">  
-        <div class="col-sm-9">
-                <a href="../index.php"><img class="logo" src="../images/logo.png"></a>
-        </div>
-        <div class="col-sm-3">
-            <p class="text-center">Registered User? <a id="login" class="btn btn-primary" href="login.php">Login</a></p>
-        </div>
+    
+      
+</head>
+
+<body>
+    
+    <div class="text-center">    
+        <a href="../index.php">
+            <img class="logo" src="../images/logo.png">
+        </a>
     </div>
+
 <!---------------  Sign Up Student form   ---------------->
     <div class="container form-container" id="student-signup">
       <h2 class="text-center">Sign Up - Student</h2><hr>
@@ -40,22 +53,11 @@
                 </div> 
               </form>
       </div>
-
-     <footer class="footer">
-        <div class="container padding-10">
-           <p>&copy; 2017 - Internshala.com</p>
-        </div>
-    </footer> 
-    <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="../bootstrap-3.3.6-dist/js/jquery.min.js"></script>
-        <script src="../bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
-    </body>    
-</html>
+    <br>
 
 
 <?php
+    include('footer.php');
     include('connection.php');
     if(isset($_POST['signup'])){
       $email = $_POST['email'];

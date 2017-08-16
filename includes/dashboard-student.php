@@ -6,9 +6,12 @@
             header( "location:dashboard-employer.php" );
         }
     }
-    include('header.php');
-?>
+    require('navbar.php');
 
+?>
+<br>
+<br>
+<br>
 <div class="container">
     <h4>Your Internship Applications</h4><br>
         <div class="table-responsive">  
@@ -31,8 +34,7 @@
                         while( $row = mysqli_fetch_assoc( $result ) ){
                             echo "<tr>";
                             
-                            echo "<td>" . $row['position'] . "</td><td>" . $row['date'] . "</td>
-                            <td>" . $row['company'] . "</td><td>" . $row['status'] . "</td>";
+                            echo "<td>" . $row['position'] . "</td><td>" .$row['apply_date']."</td><td>". $row['company'] . "</td><td>" . $row['status'] . "</td>";
                             
                             echo "</tr>";       
                         }
@@ -48,4 +50,18 @@
 
 <?php
     include('footer.php');
+    include('connection.php');
+    $email = $_SESSION['loggedInUser'];
+    echo $email;
+    $query = "select * from student where email_id=$email";
+    $result = mysqli_query($conn, $query);
+    if($result){
+    //if(mysqli_num_rows( $result ) > 0){
+        $row = mysqli_fetch_assoc( $result );
+        $_SESSION['id'] = $row['id'];
+        echo($_SESSION['id']);
+    }
+
+    
+
 ?>

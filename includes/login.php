@@ -1,7 +1,14 @@
 <?php
+    require('connection.php');
+    if(!isset($_SESSION)){
+        session_start();
+    }
+    if(isset($_SESSION['loggedInUser'])){
+        
+        header("location:../index.php");
+    }
     $loginError = "";
     $record_count = 0;
-    include( 'connection.php' );
 
     //if the login button is clicked or not?
     if( isset( $_POST['login'] ) )
@@ -26,6 +33,7 @@
             {
                 // if password matches then assign user type value recieved from database to a local variable
                 $u_type = $row['user_type'];
+                $user_id = $row['id'];
                 //start the session
                 session_start();
 
@@ -54,8 +62,8 @@
         mysqli_close ($conn);
     }
 
+//require('navbar.php');
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -63,21 +71,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>InternsPlace - From Student to Employee</title>
+    <title>InternsPlace</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="../bootstrap-3.3.6-dist/css/bootstrap.min.css">  
+      
     <!-- Custom styles for this Website -->
     <link href="../css/style.css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="container">
-        <a href="../index.php"><img class="logo" src="../images/logo.png"></a>
-     </div><br>
+    
+      
+</head>
+
+<body>
 <!-----------  Login/Sign Up   ---------->
+    <div class="text-center">    
+        <a href="../index.php">
+            <img class="logo" src="../images/logo.png">
+        </a>
+    </div><br><br>    
       <h3 class="text-center text-blue">Login to InternsPlace</h3><br>
-          <div class="container form-container">
+        <div class="container form-container">
               <? echo $loginError; ?>
               <form class="form" method="post">
                   <label><span class="glyphicon glyphicon-user"></span>Email ID</label>
@@ -86,7 +99,8 @@
                   <input id="password" class="form-control" type="password" name="password" placeholder="Enter your password" required><br>
                   <a class="pull-right" href="#">Forgot Password?</a><br>
                   <div class="text-center">
-                      <button type="submit" class="btn btn-primary  login" name="login">Login</button>  
+                      <button type="submit" class="btn btn-primary  login" name="login">Login</button><br><br>
+                      <p>Don't have an account? </p>Sign Up as <a href="signup-employer.php">Employer</a>&nbsp;or <a href=signup-student.php>Student</a>
                   </div>
               </form>
           </div>

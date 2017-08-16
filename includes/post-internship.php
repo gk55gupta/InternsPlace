@@ -1,6 +1,6 @@
 <?php
     include('session.php');
-    include('header.php');    
+    require('navbar.php');    
 ?>
 
 <div class="container">

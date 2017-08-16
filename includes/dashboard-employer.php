@@ -6,9 +6,11 @@
             header( "location:dashboard-student.php" );
         }
     }
-    include( 'header.php' );
+    require( 'navbar.php' );
 ?>
-
+    <br>
+    <br>
+    <br>
       <div class="container">
           <h4>Posted Internships</h4><br>
         <div class="table-responsive">  

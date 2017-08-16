@@ -1,0 +1,180 @@
+body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+input, pre,textarea{
+    font-family: inherit;
+}
+
+/*---------------------Top Header Style -----------------------*/
+header{
+    text-align: center;
+}
+
+header > div,nav > div,main{
+    margin: 0 auto;
+    width: 950px;
+}
+header *{
+    padding: 0;
+    display: inline-block;
+}
+
+/*---------------------To align contents left and right----------------*/
+.left{
+    display: inline-block;
+    width: 245px;
+}
+
+.right {
+    display: inline-block;
+    width: 700px;
+    text-align: right;
+}
+
+
+header a{
+    color: white;
+    margin:0px 5px;
+    display: inline;
+    text-decoration: none;
+}
+
+nav{
+    background: #f1f1f1;
+    padding: 10px;
+}
+
+
+
+/*------------------------ Menu Bar Style --------------------------*/ 
+
+.menuList{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+	list-style-type:none;
+	overflow:hidden;
+	
+}
+
+/*------------------------ Level-1 menu Style ---------------------------*/
+
+
+.menuList ul {
+    padding:0;
+	list-style-type:none;
+}
+
+.menuList a {
+	display:block;
+	text-decoration:none; 
+	color: black; 
+	text-align: center; 
+	padding:5px 10px;
+}
+.menuList > li > a{
+    border-bottom:4px solid #f1f1f1;
+}
+
+.menuList > li > a:hover{
+		border-bottom: 4px solid #ff6200;
+}
+
+.menuList > li{float:left;}
+
+/*------------------------ Level-2 menu Style ---------------------------*/
+
+
+.dropDownitems{
+	display:none;
+	position:absolute;
+	background-color: #f9f9f9;
+    width: 100px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropDownitems a{
+	
+}
+
+.dropDownitems a:hover {font-weight: bold; }
+
+.dropDown:hover > .dropDownitems {
+    display: block;
+	
+}
+
+/*------------------------ Level-3 menu Style ---------------------------*/
+.dropDownitems3rdLvl{
+	display:none;
+	position:absolute;
+	background-color: #f9f9f9;
+    min-width: 122px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	left:100%;
+    top: 33%;
+}
+
+.dropDown:hover > .dropDownitems3rdLvl{
+	display:block;
+}
+
+/*----------------------------------------------------------------*/
+
+
+
+/*------------------Contact us form Style------------------*/
+.contactus{
+    justify-content: space-between;
+    display: flex;
+}
+
+.contactus > div{
+    width: 45%;
+}
+
+
+h2.contact{
+    padding: 10px 0px;
+    border-bottom: 5px solid #333;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.half-width{
+    width: 211.5px;
+}
+
+.form-control{
+    background: #f1f1f1;
+    border: 1px solid #ddd;
+    padding: 6px 12px;
+    margin-bottom: 10px;
+}
+
+/*--------submit button*--------*/
+#submit{
+    padding: 10px 22px;
+    border:none;
+}
+
+
+/*----------------------------addition styles-----------------------*/
+.active{
+    font-weight: bold;
+}
+.text-white{
+    color: white;
+}
+
+.bg-orange{
+    background: #ff6200;
+}
+
+.text-orange{
+    color: #ff6200;
+}
+
