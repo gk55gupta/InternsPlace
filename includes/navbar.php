@@ -38,13 +38,13 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="<?php echo $path ?>index.php">
-                    <img class="logo" src="<?php echo $path ?>images/logo.png">
+                    <img class="logo img-responsive" src="<?php echo $path ?>images/logo.png">
                 </a>
             </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav navbar-center">
                 <li class=""><a href="<?php echo $path ?>index.php">Home <span class="sr-only">(current)</span></a></li>
                 
                 <li class=""><a href="<?php echo $path ?>includes/internships.php"><b>Internships</b></a></li>

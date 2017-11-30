@@ -12,7 +12,7 @@
         //display the data in the page
         
         //first the parent container
-        echo '<div class="container-fluid row">';
+        echo '<div class="container">';
         
         echo'<div class="col-sm-3">
                 <div class="filter-container">
@@ -31,7 +31,11 @@
 
 ?>
 
-
+<style>
+    [class=*'col-sm-']{
+        padding:0;
+    }
+</style>
 <br><br> 
     <div class="internship-container">    
         <div class="internship-header">

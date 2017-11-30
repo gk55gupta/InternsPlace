@@ -1,5 +1,8 @@
+<?php include('includes/navbar.php'); 
+$sql = "select count(distinct type) from internships";
 
-    <?php include('includes/navbar.php'); ?>
+
+?>
     
     <div class="hero-container">
         <div>
@@ -7,17 +10,20 @@
         </div>    
     </div>
     
-    <!-- Search Jumbotron -->
-    <div class="container" >
-        <h2 class="heading">Our Vision</h2>
-        <p style="line-height:35px;">Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla porttitor accumsan tincidunt. Donec sollicitudin molestie malesuada. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada.
-
-        Donec sollicitudin molestie malesuada. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla porttitor accumsan tincidunt.
-
-        Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing.
+    <div class="container jumbotron" >
+        <h1 class="heading">Our Vision</h1>
+        <p style="line-height:35px;">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat. Proin eget tortor risus.
+        
+        Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        
+        Vivamus suscipit tortor eget felis porttitor volutpat. Curabitur aliquet quam id dui posuere blandit. Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada.
+        
+        Curabitur aliquet quam id dui posuere blandit. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla quis lorem ut libero malesuada feugiat.
+        
+        Quisque velit nisi, pretium ut lacinia in, elementum id enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Nulla quis lorem ut libero malesuada feugiat.
         </p>
     </div>
-    <br><br><br>
+    <br>
     
     <?php require('includes/footer.php'); ?>
 

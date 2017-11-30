@@ -7,8 +7,6 @@
     if(isset($_SESSION['loggedInUser'])){
         header('location:../index.php');
     }
-
-    
     $alert = "";
     include('connection.php');
     if(isset($_POST['signup'])){
@@ -17,19 +15,17 @@
       $name = $_POST['name'];
       $org = $_POST['org'];
       $query1 = "insert into login (email_id,pass,user_type) values ('$email','$pass','employer')";
-      $query2 = "insert into employer (name,org_name,email_id) values ('$name','$org','$email')";
+      $query2 = "insert into employer (name,email_id,company_name) values ('$name','$email','$org')";
     
       if( mysqli_query( $conn, $query1 ) && mysqli_query( $conn, $query2) )
-        $alert = "<div class='alert alert-success'>Insertion Successful</div>";
+        $alert = "<div class='alert alert-success'>Registered Successfully</div>";
       else{
         $alert = "<div class='alert alert-danger'>Error In Insertion <br>".$query1."<br>".$query2."<br>".mysqli_error($conn) ."</div>";
       }
     } 
     mysqli_close($conn);
-   
-?>
 
-
+?>    
 
 
 
@@ -46,7 +42,13 @@
       
     <!-- Custom styles for this Website -->
     <link href="../css/style.css" rel="stylesheet">
-    
+    <style>
+         .logo{
+            margin:auto;
+            padding-top:2.34%;
+            width:100px;
+        }
+    </style> 
       
 </head>
 
@@ -58,11 +60,11 @@
         </a>
     </div>
     
-<!---------------  Sign Up Student form   ---------------->
-      <?php  echo $alert;   ?>
+      
       <div class="container form-container">
           
           <h2 class="text-center">Sign Up - Employer</h2><hr>
+          <?php   echo $alert;   ?>
           <form id="" method="post">
               <label>Name</label>
               <input id="name" class="form-control" type="text" name="name" placeholder="Enter your Name" required>
@@ -82,4 +84,5 @@
               </div>  
           </form>
       </div>
-    <?php require('footer.php'); ?>
+
+    <?php    require('footer.php');  ?>

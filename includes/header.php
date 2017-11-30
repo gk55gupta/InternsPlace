@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title><?php $title="InternsPlace - From Student To Employee";   echo $title; ?></title>
+    <title><?php  echo("InternsPlace - From Student To Employee"); ?></title>
       
     <!-- Bootstrap core CSS -->
     <link href="../bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">

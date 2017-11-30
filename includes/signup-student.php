@@ -6,6 +6,24 @@
     if(isset($_SESSION['loggedInUser'])){
         header('location:../index.php');
     }
+    $alert  =  "";
+    include('connection.php');
+    if(isset($_POST['signup'])){
+      $email = $_POST['email'];
+      $pass = $_POST['password'];
+      $name = $_POST['name'];
+      $h_q = $_POST['h_qual'];
+      $clg_name = $_POST['college'];
+      $query1 = "insert into login (email_id,pass,user_type) values ('$email','$pass','student')";
+      $query2 = "insert into student (name,email_id,college) values ('$name','$email','$clg_name')";
+        
+        if( mysqli_query( $conn, $query1 ) && mysqli_query( $conn, $query2) )
+            $alert = "<div class='alert alert-success'>Registered Successfully</div>";
+        else{
+            $alert = "<div class='alert alert-danger'>Error In Insertion <br>".$query1."<br>".$query2."<br>".mysqli_error($conn) ."</div>";
+        }
+    } 
+    mysqli_close($conn);
 
 ?>
 
@@ -22,7 +40,13 @@
       
     <!-- Custom styles for this Website -->
     <link href="../css/style.css" rel="stylesheet">
-    
+    <style>
+         .logo{
+            margin:auto;
+            padding-top:2.34%;
+            width:100px;
+        }
+    </style>
       
 </head>
 
@@ -37,6 +61,7 @@
 <!---------------  Sign Up Student form   ---------------->
     <div class="container form-container" id="student-signup">
       <h2 class="text-center">Sign Up - Student</h2><hr>
+      <?php   echo $alert;   ?>
         <form id="" method="post">
           <label>Name</label>
                 <input id="name" class="form-control" type="text" name="name" placeholder="Enter your Name" required>
@@ -56,24 +81,4 @@
     <br>
 
 
-<?php
-    include('footer.php');
-    include('connection.php');
-    if(isset($_POST['signup'])){
-      $email = $_POST['email'];
-      $pass = $_POST['password'];
-      $name = $_POST['name'];
-      $h_q = $_POST['h_qual'];
-      $clg_name = $_POST['college'];
-      $query1 = "insert into login (email_id,pass,user_type) values ('$email','$pass','student')";
-      $query2 = "insert into student (name,highest_qualification,college_name,email_id) values ('$name','$h_q','$clg_name','$email')";
-    
-      if( mysqli_query( $conn, $query1 ) && mysqli_query( $conn, $query2) )
-        echo "Insertion Successful";
-      else{
-        echo "Error In Insertion: <br>".$query1."<br>".$query2."<br>".mysqli_error($conn);
-      }
-    } 
-    mysqli_close($conn);
-
-?>
+<?php    include('footer.php');   ?>

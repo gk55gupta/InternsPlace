@@ -9,7 +9,10 @@
     }
     $loginError = "";
     $record_count = 0;
-
+    $sql = "select distinct type from internship";
+    $res = mysqli_query( $conn, $sql );
+    $val = mysqli_fetch_array($res);
+    // echo $val[1];
     //if the login button is clicked or not?
     if( isset( $_POST['login'] ) )
     {
@@ -20,7 +23,7 @@
         //query database for inputted login email
         $query = "Select pass,user_type from login where email_id='$email_id' ";
         $result = mysqli_query( $conn, $query );
-
+        
         //check the number of records
         $record_count = mysqli_num_rows( $result );
         if( $record_count > 0)
@@ -61,8 +64,6 @@
         //close the database
         mysqli_close ($conn);
     }
-
-//require('navbar.php');
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +79,13 @@
       
     <!-- Custom styles for this Website -->
     <link href="../css/style.css" rel="stylesheet">
-    
+    <style>
+        .logo{
+            margin:auto;
+            padding-top:5%;
+            width:100px;
+        }
+    </style>
       
 </head>
 
