@@ -13,8 +13,13 @@ body {
 }
 .logo{
     width: 65px;
+    box-shadow: 0px 0px 10px 0px #366285;
+    top: 3px;
+    right: 90%;
 }
-
+.navbar-center{
+    margin-left: 2%;
+}
 .navbar-form{
     margin-bottom: 0;
 }
@@ -50,12 +55,13 @@ body {
     margin-left: 20px;
 }
 
-@media (max-width:767px){
+@media (max-width:991px){
     .navbar-header{
         padding: 10px;
     }
     .logo{
         width: 50px;
+        right: 45%;
     }
     .nav>li>a {
         padding: 15px;

@@ -19,8 +19,8 @@
     <title>InternsPlace</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="<?php echo $path ?>bootstrap-3.3.6-dist/css/bootstrap.min.css">  
-      
+    <!-- <link rel="stylesheet" href="<?php echo $path ?>bootstrap-3.3.6-dist/css/bootstrap.min.css">   -->
+    <link rel="stylesheet" href="<?php echo $path ?>bootstrap-4.0.0/css/bootstrap.min.css">
     <!-- Custom styles for this Website -->
     <link href="<?php echo $path ?>css/style.css" rel="stylesheet">
     <link href="<?php echo $path ?>css/navbar.css" rel="stylesheet">
@@ -28,39 +28,34 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">  
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="<?php echo $path ?>index.php">
-                    <img class="logo img-responsive" src="<?php echo $path ?>images/logo.png">
-                </a>
-            </div>
+    <!-- navbar start here -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="<?php echo $path ?>index.php">
+            <img class="logo img-responsive position-absolute" src="<?php echo $path ?>images/logo.png">
+        </a>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-center">
-                <li class=""><a href="<?php echo $path ?>index.php">Home <span class="sr-only">(current)</span></a></li>
-                
-                <li class=""><a href="<?php echo $path ?>includes/internships.php"><b>Internships</b></a></li>
-                <li>
-                    <form id="search-internship" class="navbar-form">
-                        <div class="form-group">
-                            <input id="textbox-search" type="text" class="form-control" placeholder="Search">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Search</button>
-                    </form>
-                </li>    
-            </ul>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <div class="container">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="<?php echo $path ?>index.php">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $path ?>includes/internships.php"><b>Internships</b></a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>    
             <?php  check_login();  ?>
-    </div><!-- /.navbar-collapse -->
-    </div>        
-</nav>
+        </div>
+    </nav>
+    <!-- navbar ends here -->
 
 <?php
     
@@ -76,11 +71,10 @@
 			display_login_header();	
 	}
 
+?>
 
-
-	function display_logout_header(){
-		echo '<ul class="nav navbar-nav navbar-right">
-                <li>
+<?php	function display_logout_header(){
+		echo '<li>
                     <a href='.$GLOBALS["path"].'includes/dashboard-student.php><b>Dashboard</b></a>
                 </li>
 	            <p class="navbar-text"> 
@@ -90,31 +84,19 @@
 	              </p>
 	              <li>
 	                  <a id="logout-btn"  type="button" class="btn btn-danger" href='.$GLOBALS["path"].'includes/logout.php>Logout</a>
-	              </li> 
-          		</ul>';
+	              </li>';
 	}
 
 
 	function display_login_header(){
-		echo '<ul class="nav navbar-nav navbar-right">
-                <li><a id="login" class="" href='.$GLOBALS["path"].'includes/login.php>Login</a></li>
+		echo '<li><a id="login" class="" href='.$GLOBALS["path"].'includes/login>Login</a></li>
                 <li class="dropdown">
                     <a id="signup" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign Up <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href='.$GLOBALS["path"].'includes/signup-student.php>Student</a></li>
                         <li><a href='.$GLOBALS["path"].'includes/signup-employer.php>Employer</a></li>
                     </ul>
-                </li>
-            </ul>';
+                </li>';
 
 	}
-
-
-	function redirect( $url ) {
-        ob_start();
-        header( 'Location:'.$url );
-        ob_end_flush();
-        exit();
-	}
-
 ?>    

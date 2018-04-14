@@ -2,21 +2,24 @@
     include( 'session.php' );
     if( isset( $_SESSION['user_type'] ) ) {
         if( $_SESSION['user_type'] == "employer" ){
-            
+            echo'<h1>ALJVGHCGHFHG</h1>';
             header( "location:dashboard-employer.php" );
         }
     }
     require('navbar.php');
 
 ?>
+<script src="../js/angular.min.js"></script>
+<script src="../api/api.js"></script>
 <br>
 <br>
 <br>
-<div class="container">
+<div class="container" ng-app="asc_app">
     <h4>Your Internship Applications</h4><br>
-        <div class="table-responsive">  
+        <div class="table-responsive" ng-controller="ctrl">  
           <table class="table table-striped table-bordered">
               <tr class="">
+                    {{internships}}
                   <th>Position</th>
                   <th>Application Date</th>
                   <th>Company</th>
@@ -47,7 +50,7 @@
           </table>
           </div>    
       </div>
-
+                    
 <?php
     include('footer.php');
     include('connection.php');

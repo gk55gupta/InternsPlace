@@ -13,6 +13,36 @@ body{
     background-color: white;
 }
 
+.rel{
+    position: relative;
+}
+.abs{
+    position: absolute;
+}
+.circle{
+    border-radius: 50%;
+    width: 10%;
+    height: 22%;
+    /* opacity: 0.7; */
+    left: 83%
+}
+.c1{
+    background-color: #0883D9;
+    top:15%;
+}
+.c2{
+    background-color:#f68d20;
+    top:30%;
+}
+.c3{
+    background-color: #555;
+    top:45%;
+}
+.c4{
+    background-color: rgb(0, 178, 223);
+    top:60%;
+}
+
 .dropdown{
     display: inline-block;
 }

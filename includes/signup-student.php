@@ -4,7 +4,7 @@
         session_start();
     }
     if(isset($_SESSION['loggedInUser'])){
-        header('location:../index.php');
+        redirect('../index.php');
     }
     $alert  =  "";
     include('connection.php');
@@ -18,7 +18,7 @@
       $query2 = "insert into student (name,email_id,college) values ('$name','$email','$clg_name')";
         
         if( mysqli_query( $conn, $query1 ) && mysqli_query( $conn, $query2) )
-            $alert = "<div class='alert alert-success'>Registered Successfully</div>";
+            header('dashboard-student.php');
         else{
             $alert = "<div class='alert alert-danger'>Error In Insertion <br>".$query1."<br>".$query2."<br>".mysqli_error($conn) ."</div>";
         }
@@ -66,11 +66,11 @@
           <label>Name</label>
                 <input id="name" class="form-control" type="text" name="name" placeholder="Enter your Name" required>
                 <label>Email ID</label>
-                <input id="email-id" class="form-control" type="email" name="email" placeholder="Enter Email ID" required>
+                <input id="email_id" class="form-control" type="email" name="email" placeholder="Enter Email ID" required>
                 <label>Highest Qualification</label>
-                <input id="login-id" class="form-control" type="text" name="h_qual" placeholder="Enter your highest Qualification" required>
+                <input id="h_qual" class="form-control" type="text" name="h_qual" placeholder="Enter your highest Qualification" required>
                 <label>College/University Name</label>
-                <input id="login-id" class="form-control" type="text" name="college" placeholder="Enter College/Univesity name" required>   
+                <input id="college" class="form-control" type="text" name="college" placeholder="Enter College/Univesity name" required>   
                 <label>Password</label>
                 <input id="password" class="form-control" type="password" name="password" placeholder="Enter your password" required>
                 <div class="text-center">
